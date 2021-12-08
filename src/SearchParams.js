@@ -14,7 +14,7 @@ const SearchParams = () => {
   const [breeds] = useBreedList(animal);
   const [theme, setTheme] = useContext(ThemeContext);
 
-
+  // useEffect is used to do something AFTER render //
   useEffect(() => {
     requestPets();
   }, []);
@@ -25,7 +25,7 @@ const SearchParams = () => {
     );
 
     const json = await res.json();
-
+    console.log("pets data from fetch api call ", json);
     setPets(json.pets);
   }
 
